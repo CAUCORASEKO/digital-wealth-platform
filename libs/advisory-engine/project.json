@@ -1,0 +1,7 @@
+{
+  "name": "advisory-engine",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/advisory-engine/src",
+  "projectType": "library",
+  "targets": {}
+}

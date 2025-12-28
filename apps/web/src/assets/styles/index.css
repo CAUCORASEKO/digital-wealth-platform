@@ -1,0 +1,192 @@
+
+@import 'tailwindcss';
+
+/* ======================================================
+   GLOBAL BANKING THEME — DESKTOP / TAURI FIRST
+   ====================================================== */
+
+:root {
+  /* Backgrounds */
+  --bg: #0e1116;
+  --surface: #161a21;
+  --surface-elevated: #1b2029;
+
+  /* Borders */
+  --border: #242a33;
+
+  /* Text */
+  --text-primary: #e6e8ec;
+  --text-muted: #9aa0aa;
+
+  /* Accent (Banking Blue) */
+  --accent: #2563eb;       /* Primary action */
+  --accent-soft: #1e40af; /* Hover / emphasis */
+}
+
+/* ======================================================
+   BASE
+   ====================================================== */
+
+html,
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ======================================================
+   TYPOGRAPHY
+   ====================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--text-primary);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+p {
+  color: var(--text-muted);
+}
+
+/* ======================================================
+   CARDS / PANELS
+   ====================================================== */
+
+.card,
+[data-card] {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+/* Slightly elevated sections */
+.card-elevated {
+  background-color: var(--surface-elevated);
+}
+
+/* ======================================================
+   BUTTONS
+   ====================================================== */
+
+.btn-primary {
+  background-color: var(--accent);
+  color: #ffffff;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 0.5rem 0.875rem;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-soft);
+}
+
+/* Secondary / subtle actions */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.btn-secondary:hover {
+  background-color: var(--surface-elevated);
+}
+
+/* ======================================================
+   TABLES (Holdings / Ledger)
+   ====================================================== */
+
+table {
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: var(--surface-elevated);
+  color: var(--text-muted);
+}
+
+th {
+  font-weight: 500;
+  text-align: left;
+}
+
+tbody tr {
+  border-top: 1px solid var(--border);
+}
+
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Numeric alignment */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ======================================================
+   INPUTS
+   ====================================================== */
+
+input,
+select,
+textarea {
+  background-color: #12161c;
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  border-radius: 6px;
+  padding: 0.5rem 0.625rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+/* Mobile / touch fixes */
+input,
+textarea,
+select {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+/* Prevent iOS zoom */
+@media screen and (max-width: 768px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
+
+/* ======================================================
+   BANKING MODE — REMOVE THEME SWITCH (FORCED DARK)
+   ====================================================== */
+
+/* Hide theme toggle (moon / sun switch from ThemeProvider) */
+button[role='switch'],
+button[aria-checked],
+header button[aria-label*='theme'],
+header button:has(svg[data-icon]),
+header button:has(svg.lucide-moon),
+header button:has(svg.lucide-sun) {
+  display: none !important;
+}
+
+/* Remove leftover spacing in header */
+header {
+  gap: 0 !important;
+}
+
+/* ⛔️ HIDE REACT QUERY DEVTOOLS (BANKING MODE) */
+[data-testid="react-query-devtools-panel"],
+[data-testid="react-query-devtools-toggle"] {
+  display: none !important;
+}

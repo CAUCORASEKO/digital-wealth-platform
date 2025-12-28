@@ -1,0 +1,53 @@
+/* ------------------------------------------------------------------
+   BANKING / DESKTOP THEME (Tauri-first)
+------------------------------------------------------------------- */
+
+:root {
+  /* Backgrounds */
+  --bg-app: #f4f6f8;
+  --bg-card: #ffffff;
+  --bg-muted: #eef1f4;
+
+  /* Text */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  /* Borders */
+  --border-default: #e5e7eb;
+
+  /* Accents */
+  --accent-primary: #2563eb;
+  --accent-success: #16a34a;
+  --accent-warning: #d97706;
+  --accent-danger: #dc2626;
+}
+
+/* Cards */
+.card,
+[data-card] {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Muted text */
+.text-muted,
+.text-muted-foreground {
+  color: var(--text-secondary);
+}
+
+/* Buttons (neutral banking feel) */
+button {
+  border-radius: 8px;
+}

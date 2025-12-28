@@ -1,0 +1,26 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "web3-ai-copilot",
+  "version": "0.1.0",
+  "identifier": "com.tauri.dev",
+  "build": {
+    "frontendDist": "../apps/web/dist",
+    "devUrl": "http://localhost:4200",
+    "beforeDevCommand": "pnpm nx serve web",
+    "beforeBuildCommand": "pnpm nx build web"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "web3-ai-copilot",
+        "width": 800,
+        "height": 600,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  }
+}

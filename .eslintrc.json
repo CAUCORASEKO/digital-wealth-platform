@@ -1,0 +1,50 @@
+{
+  "root": true,
+  "ignorePatterns": [
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/dist/**",
+    "**/node_modules/**"
+  ],
+  "plugins": ["@nx"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nx/typescript"],
+      "rules": {
+        "no-console": ["warn", { "allow": ["warn", "error"] }],
+        "no-debugger": "warn"
+      }
+    },
+    {
+      "files": ["*.tsx", "*.jsx"],
+      "plugins": ["react-hooks"],
+      "rules": {
+        "react-hooks/exhaustive-deps": "warn"
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nx/javascript"],
+      "rules": {}
+    }
+  ]
+}
