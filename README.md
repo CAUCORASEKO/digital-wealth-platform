@@ -994,31 +994,35 @@ const valid = isAddress(address);
 
 Services and components for exporting portfolio data in professional formats.
 
+> **Status**  
+> Export services are fully implemented at the library level but are not yet wired into the main application UI.  
+> Frontend integration is planned as a near-term milestone.
+
 #### Features
 
 **PDF Export**
 - Professional, report-ready layout
 - Landscape orientation for wide tables
-- Sections: Summary, Tokens, NFTs, DeFi, Transactions
+- Structured sections: Summary, Tokens, NFTs, DeFi, Transactions
 - Styled tables with borders
 - Automatic pagination and page breaks
 
 **CSV Export**
 - Standard CSV compatible with Excel and Google Sheets
-- Multiple sections in a single file
+- Multiple portfolio sections supported
 - UTF-8 encoding for international compatibility
 
 **React Component**
-- `ExportButton` — Pre-built export trigger for UI integration
+- `ExportButton` — Pre-built React component designed for UI integration
 
 #### Usage
+
 ```ts
 import { exportToPdf, exportToCsv } from '@web3-ai-copilot/export-services';
 // or
 import { ExportButton } from '@web3-ai-copilot/export-services';
 
 <ExportButton />
-```
 
 #### Benefits
 - Ready-to-use export functionality
