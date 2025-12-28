@@ -1,8 +1,16 @@
 # Digital Wealth Platform
 
-A modern, institutional-grade digital wealth platform designed to provide a consolidated, secure, and structured view of on-chain assets across multiple networks, with advanced portfolio analytics and reporting capabilities.
+> Institutional-grade digital wealth platform for on-chain asset aggregation,
+> analytics, and advisory intelligence — built with a banking-first architecture
+> using React, TypeScript, Nx, and modular AI services.
 
-The platform is built with a banking-first design philosophy, prioritizing clarity, data integrity, and long-term scalability over speculative or consumer-oriented interfaces.
+A modern, institutional-grade digital wealth platform designed to provide a
+consolidated, secure, and structured view of on-chain assets across multiple
+networks, with advanced portfolio analytics and reporting capabilities.
+
+The platform is built with a banking-first design philosophy, prioritizing
+clarity, data integrity, and long-term scalability over speculative or
+consumer-oriented interfaces.
 
 ---
 
