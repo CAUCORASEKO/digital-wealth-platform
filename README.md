@@ -1185,10 +1185,12 @@ TypeScript example:
 ---
 
 ### Installation
-
+  
+```bash
   git clone <repository-url>
   cd web3-ai-copilot
   pnpm install
+```
 
 ---
 
@@ -1228,8 +1230,6 @@ Create file: apps/ai-gateway/.env
 
   RENDER_EXTERNAL_URL=https://your-app.onrender.com
 
-```
-
 
 ---
 
@@ -1239,45 +1239,73 @@ Create file: apps/ai-gateway/.env
 
 ### Run in Development
 
-```bash
-# Terminal 1 — Frontend
-pnpm dev
-# Application available at http://localhost:4200
+Terminal 1 — Frontend
 
-# Terminal 2 — Backend (AI Gateway)
-pnpm dev:gateway
-# API available at http://localhost:3001
-# Swagger UI available at http://localhost:3001/api-docs
-```
+  pnpm dev
+
+Application available at:
+  http://localhost:4200
+
+
+Terminal 2 — Backend (AI Gateway)
+
+  pnpm dev:gateway
+
+API available at:
+  http://localhost:3001
+
+Swagger UI available at:
+  http://localhost:3001/api-docs
 
 ---
 
 ### Development Commands
 
-```bash
-# Development
-pnpm dev              # Frontend (apps/web)
-pnpm dev:gateway      # Backend (apps/ai-gateway)
+Development
 
-# Build
-pnpm build            # Build all projects
+  pnpm dev
+    Frontend (apps/web)
 
-# Linting
-pnpm lint             # Lint a specific project
-pnpm lint:all         # Lint all projects
-pnpm lint:fix         # Lint and auto-fix issues
-pnpm lint:debug       # Detailed lint output
-pnpm lint:errors      # Show only errors
-pnpm lint:summary     # Summary by project
+  pnpm dev:gateway
+    Backend (apps/ai-gateway)
 
-# Testing
-pnpm test             # Run all tests
+Build
 
-# Formatting
-pnpm format           # Format code with Prettier
-pnpm format:check     # Check formatting without changes
-```
+  pnpm build
+    Build all projects
 
+Linting
+
+  pnpm lint
+    Lint a specific project
+
+  pnpm lint:all
+    Lint all projects
+
+  pnpm lint:fix
+    Lint and auto-fix issues
+
+  pnpm lint:debug
+    Detailed lint output
+
+  pnpm lint:errors
+    Show only errors
+
+  pnpm lint:summary
+    Summary by project
+
+Testing
+
+  pnpm test
+    Run all tests
+
+Formatting
+
+  pnpm format
+    Format code with Prettier
+
+  pnpm format:check
+    Check formatting without changes
 ---
 
 ## 📖 API Documentation
