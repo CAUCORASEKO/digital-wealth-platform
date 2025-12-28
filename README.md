@@ -994,8 +994,8 @@ const valid = isAddress(address);
 
 Services and components for exporting portfolio data in professional formats.
 
-> **Status**  
-> Export services are fully implemented at the library level but are not yet wired into the main application UI.  
+> **Status**
+> Export services are fully implemented at the library level but are not yet wired into the main application UI.
 > Frontend integration is planned as a near-term milestone.
 
 #### Features
@@ -1017,12 +1017,13 @@ Services and components for exporting portfolio data in professional formats.
 
 #### Usage
 
-```ts
-import { exportToPdf, exportToCsv } from '@web3-ai-copilot/export-services';
-// or
-import { ExportButton } from '@web3-ai-copilot/export-services';
+TypeScript example:
 
-<ExportButton />
+  import { exportToPdf, exportToCsv } from '@web3-ai-copilot/export-services';
+  // or
+  import { ExportButton } from '@web3-ai-copilot/export-services';
+
+  <ExportButton />
 
 #### Benefits
 - Ready-to-use export functionality
@@ -1034,46 +1035,40 @@ import { ExportButton } from '@web3-ai-copilot/export-services';
 ## Application Runtime Flow
 
 ### 1. Wallet Connection
-```
-User clicks “Connect Wallet”
-  → Wagmi presents wallet providers (MetaMask, WalletConnect, etc.)
-  → User selects wallet
-  → Wallet connects
-  → Address stored in Zustand state
-  → React Query detects address and activates data queries
-```
+
+  User clicks “Connect Wallet”
+    → Wagmi presents wallet providers (MetaMask, WalletConnect, etc.)
+    → User selects wallet
+    → Wallet connects
+    → Address stored in Zustand state
+    → React Query detects address and activates data queries
 
 ### 2. Data Fetching
-```
-React Query hooks activate
-  → Token, NFT, DeFi, and transaction hooks call backend APIs
-  → Backend proxies requests to Zerion (API key secured)
-  → Responses cached to reduce external calls
-  → Data mapped to internal domain models
-  → React Query cache updates UI automatically
-```
+
+  React Query hooks activate
+    → Token, NFT, DeFi, and transaction hooks call backend APIs
+    → Backend proxies requests to Zerion (API key secured)
+    → Responses cached to reduce external calls
+    → Data mapped to internal domain models
+    → React Query cache updates UI automatically
 
 ### 3. AI Interaction
-```
-User submits analysis request
-  → Message stored in Zustand (persistent)
-  → Frontend sends request to AI Gateway with portfolio context
-  → Backend validates input with Zod
-  → AI prompt assembled with financial context
-  → LLM provider processes request
-  → Response returned and persisted
-  → UI renders analysis output
-```
+
+  User submits analysis request
+    → Message stored in Zustand (persistent)
+    → Frontend sends request to AI Gateway with portfolio context
+    → Backend validates input with Zod
+    → AI prompt assembled with financial context
+    → LLM provider processes request
+    → Response returned and persisted
+    → UI renders analysis output
 
 ### 4. History Persistence
-```
-AI interactions stored per wallet
-  → Persisted via Zustand middleware to localStorage
-  → Restored automatically on reload
-  → User can clear history per wallet
-```
 
-## Use Cases & Implementation Benefits
+  AI interactions stored per wallet
+    → Persisted via Zustand middleware to localStorage
+    → Restored automatically on reload
+    → User can clear history per wallet
 
 ---
 
@@ -1125,7 +1120,6 @@ AI interactions stored per wallet
 ## ✨ Implementation Benefits
 
 ### Monorepo Architecture (Nx)
-
 - Modular development with reusable libraries
 - End-to-end type safety between frontend and backend
 - Optimized builds with intelligent caching
@@ -1133,14 +1127,12 @@ AI interactions stored per wallet
 - Scalable structure for new apps and services
 
 ### Separation of Concerns
-
 - Frontend focused exclusively on UI/UX
 - Backend dedicated to AI processing and data orchestration
 - Shared libraries prevent duplication
 - Isolated changes improve maintainability
 
 ### Performance
-
 - Code splitting with lazy loading of heavy components
 - Intelligent caching:
   - React Query minimizes redundant frontend requests
@@ -1150,7 +1142,6 @@ AI interactions stored per wallet
 - Cached backend responses to limit external API usage
 
 ### Developer Experience
-
 - Strict TypeScript catches errors early
 - Hot Module Replacement for instant feedback
 - React Query DevTools for data debugging
@@ -1158,7 +1149,6 @@ AI interactions stored per wallet
 - ESLint and Prettier for consistent code quality
 
 ### User Experience
-
 - Modern, institutional-grade UI
 - Fully responsive across desktop, tablet, and mobile
 - Persistent state and history between sessions
@@ -1166,7 +1156,6 @@ AI interactions stored per wallet
 - Accessibility support with ARIA and keyboard navigation
 
 ### Security
-
 - Strong validation with Zod schemas
 - API keys securely stored in backend only
 - Rate limiting to prevent abuse and cost overruns
@@ -1175,9 +1164,8 @@ AI interactions stored per wallet
 - Type safety to prevent runtime failures
 
 ### Extensibility
-
 - Pluggable LLM provider architecture
-- Multi–vector store support for AI context
+- Multi-vector store support for AI context
 - Simple configuration for adding new blockchains
 - Plugin-ready design for future expansion
 
@@ -1185,86 +1173,60 @@ AI interactions stored per wallet
 
 ## 🚀 Setup and Configuration
 
----
-
 ### Prerequisites
-
-- **Node.js** 18+ and **pnpm** 9.0+
-- **Zerion API Key** (https://zerion.io/)
-- **WalletConnect Project ID** (optional, https://cloud.walletconnect.com/)
-- **AI Provider API Key** (at least one):
-  - OpenAI (https://platform.openai.com/)
-  - Anthropic (https://console.anthropic.com/)
+- Node.js 18+ and pnpm 9.0+
+- Zerion API Key (https://zerion.io/)
+- WalletConnect Project ID (optional, https://cloud.walletconnect.com/)
+- AI Provider API Key (at least one):
+  - OpenAI
+  - Anthropic
   - Local Llama server (optional)
 
 ---
 
 ### Installation
 
-```bash
-# Clone the repository
-git clone <repository-url>
-cd web3-ai-copilot
-
-# Install dependencies
-pnpm install
-```
+  git clone <repository-url>
+  cd web3-ai-copilot
+  pnpm install
 
 ---
 
 ### Frontend Configuration
 
-Create the file `apps/web/.env.local`:
+Create file: apps/web/.env.local
 
-```env
-# WalletConnect (optional)
-VITE_WALLET_CONNECT_PROJECT_ID=your_project_id
-
-# AI Gateway URL
-VITE_AI_GATEWAY_URL=http://localhost:3001
-```
+  VITE_WALLET_CONNECT_PROJECT_ID=your_project_id
+  VITE_AI_GATEWAY_URL=http://localhost:3001
 
 ---
 
 ### Backend Configuration
 
-Create the file `apps/ai-gateway/.env`:
+Create file: apps/ai-gateway/.env
 
-```env
-# Server configuration
-PORT=3001
+  PORT=3001
 
-# Zerion API (required)
-ZERION_API_KEY=your_zerion_api_key_here
+  ZERION_API_KEY=your_zerion_api_key_here
 
-# AI Providers (optional)
-OPENAI_API_KEY=sk-...
-ANTHROPIC_API_KEY=sk-ant-...
+  OPENAI_API_KEY=sk-...
+  ANTHROPIC_API_KEY=sk-ant-...
 
-# Local Llama (optional)
-LLAMA_API_URL=http://localhost:8080
-LLAMA_API_KEY=your_key
+  LLAMA_API_URL=http://localhost:8080
+  LLAMA_API_KEY=your_key
 
-# Default AI provider
-DEFAULT_AI_PROVIDER=openai
+  DEFAULT_AI_PROVIDER=openai
 
-# CORS configuration (optional, production)
-ALLOWED_ORIGINS=
+  ALLOWED_ORIGINS=
+  LOG_LEVEL=info
 
-# Logging level
-# Options: error | warn | info | debug
-LOG_LEVEL=info
+  SUPABASE_URL=...
+  SUPABASE_KEY=...
 
-# Vector Store (optional, future RAG support)
-SUPABASE_URL=...
-SUPABASE_KEY=...
-# or
-PINECONE_API_KEY=...
-PINECONE_ENVIRONMENT=...
+  PINECONE_API_KEY=...
+  PINECONE_ENVIRONMENT=...
 
-# Deployment (optional, auto-detected)
-RENDER_EXTERNAL_URL=https://your-app.onrender.com
-```
+  RENDER_EXTERNAL_URL=https://your-app.onrender.com
 
 ---
 
