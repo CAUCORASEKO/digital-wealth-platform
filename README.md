@@ -1228,6 +1228,9 @@ Create file: apps/ai-gateway/.env
 
   RENDER_EXTERNAL_URL=https://your-app.onrender.com
 
+```
+
+
 ---
 
 ## 🧪 Development & Tooling
