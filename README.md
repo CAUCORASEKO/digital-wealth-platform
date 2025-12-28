@@ -14,7 +14,7 @@ consumer-oriented interfaces.
 
 ---
 
-## 🎯 Overview
+## Overview
 
 **Digital Wealth Platform** enables users to monitor and analyze their digital assets through a unified private wealth dashboard.
 
@@ -39,7 +39,7 @@ The application is implemented as an Nx monorepo, ensuring modularity, scalabili
 
 ---
 
-## 🖥️ Platform Preview
+## Platform Preview
 
 The following screenshots illustrate the core user experience and design philosophy of the Digital Wealth Platform.
 
@@ -85,7 +85,7 @@ Context-aware advisory assistant powered by portfolio data, designed to deliver 
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 The platform is built using a modular monorepo architecture designed for long-term scalability, institutional reliability, and clear separation of concerns between presentation, data access, and analytical services.
 
@@ -157,7 +157,7 @@ The platform follows a deterministic and auditable data flow designed to mirror 
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 The platform is built using a modern, enterprise-grade technology stack focused on performance, maintainability, and long-term extensibility.
 
