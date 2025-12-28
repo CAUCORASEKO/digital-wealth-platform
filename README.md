@@ -1237,75 +1237,28 @@ Create file: apps/ai-gateway/.env
 
 ---
 
-### Run in Development
+# Serve applications
+pnpm nx serve web
+pnpm nx serve ai-gateway
 
-Terminal 1 — Frontend
+# Build
+pnpm nx build web
+pnpm nx build ai-gateway
+pnpm nx run-many -t build
 
-  pnpm dev
+# Linting
+pnpm nx lint web
+pnpm nx lint ai-gateway
+pnpm nx run-many -t lint
 
-Application available at:
-  http://localhost:4200
+# Testing
+pnpm nx test web
+pnpm nx test ai-gateway
+pnpm nx run-many -t test
 
-
-Terminal 2 — Backend (AI Gateway)
-
-  pnpm dev:gateway
-
-API available at:
-  http://localhost:3001
-
-Swagger UI available at:
-  http://localhost:3001/api-docs
-
----
-
-### Development Commands
-
-Development
-
-  pnpm dev
-    Frontend (apps/web)
-
-  pnpm dev:gateway
-    Backend (apps/ai-gateway)
-
-Build
-
-  pnpm build
-    Build all projects
-
-Linting
-
-  pnpm lint
-    Lint a specific project
-
-  pnpm lint:all
-    Lint all projects
-
-  pnpm lint:fix
-    Lint and auto-fix issues
-
-  pnpm lint:debug
-    Detailed lint output
-
-  pnpm lint:errors
-    Show only errors
-
-  pnpm lint:summary
-    Summary by project
-
-Testing
-
-  pnpm test
-    Run all tests
-
-Formatting
-
-  pnpm format
-    Format code with Prettier
-
-  pnpm format:check
-    Check formatting without changes
+# Formatting
+pnpm format
+pnpm format:check
 ---
 
 ## 📖 API Documentation
